@@ -1,5 +1,5 @@
-# README - Dokumentation Mirjam
-## Inhalt
+# README - Dokumentation Einkaufsliste
+##  Mirjam Lang
 ### Untertitel
 
 - Einkaufsliste WG

@@ -1,6 +1,5 @@
 # README - Dokumentation Einkaufsliste
 ##  Mirjam Lang
-### Untertitel
-
+### Idee
 - Einkaufsliste WG
 - Evtl. mit Budgetplan

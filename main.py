@@ -30,11 +30,12 @@ def formular():
         return render_template("formular.html")
 
 
-@app.route("/formular/daten_einkaufsliste.json")
+@app.route("/speichern/<aktivitaet>")
 def speichern(aktivitaet):
     zeitpunkt, aktivitaet = daten.aktivitaet_speichern(aktivitaet)
 
     return "Gespeichert: " + aktivitaet + " um " + str(zeitpunkt)
+
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)

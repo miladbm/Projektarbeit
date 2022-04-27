@@ -30,11 +30,15 @@ def formular():
         return render_template("formular.html")
 
 
-@app.route("/speichern/<aktivitaet>")
-def speichern(aktivitaet):
-    zeitpunkt, aktivitaet = daten.aktivitaet_speichern(aktivitaet)
+@app.route("/speichern/", methods=['GET', 'POST'])
+def aktivitaet_speichern():
+    if request.method == 'POST':
+        aktivitaet = request.form['aktivitaet']
+        zeitpunkt, aktivitaet = daten.aktivitaet_speichern(aktivitaet)
+        rueckgabe_string = "Gespeichert: " + aktivitaet + " um " + str(zeitpunkt)
+        return rueckgabe_string
 
-    return "Gespeichert: " + aktivitaet + " um " + str(zeitpunkt)
+    return render_template("formular.html")
 
 
 if __name__ == "__main__":

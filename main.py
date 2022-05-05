@@ -25,16 +25,20 @@ def formular():
         #ziel_person = request.form['vorname']
         #rueckgabe_string = "Hello " + ziel_person + "!"
         #return rueckgabe_string
+
+        #liste erstellen
+        aktivitaet = request.form['name']
+        zeitpunkt, aktivitaet = daten.aktivitaet_speichern(aktivitaet)
         return render_template("formular.html")
     else:
         return render_template("formular.html")
 
 
-@app.route("/speichern/", methods=['GET', 'POST'])
+@app.route("/formular/", methods=['GET', 'POST'])
 def aktivitaet_speichern():
     if request.method == 'POST':
-        aktivitaet = request.form['aktivitaet']
-        zeitpunkt, aktivitaet = daten.aktivitaet_speichern(aktivitaet)
+        # aktivitaet = request.form['aktivitaet']
+        # zeitpunkt, aktivitaet = daten.aktivitaet_speichern(aktivitaet)
         rueckgabe_string = "Gespeichert: " + aktivitaet + " um " + str(zeitpunkt)
         return rueckgabe_string
 

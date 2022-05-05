@@ -1,11 +1,12 @@
 {% include "header.html" %}
 
-<h1>Dies ist mein Formular.</h1>
+<h1>Bitte trage hier deine Ausgaben ein:</h1>
 <form method="POST">
-<p>Vorname: </p><input type="text" name="vorname" placeholder="Bitte gib dein Name ein"><br><br>
-<p>Produkt:</p><input type="text" name="product" placeholder="Bitte gib das Produkt ein"><br><br>
+<p>Name: </p><input type="text" name="name" placeholder="Wie ist dein Name?"><br><br>
+<p>Was: </p><input type="text" name="was" placeholder="Was wurde gekauft?"><br><br>
+<p>Betrag:</p><input type="text" name="betrag" placeholder="Wie teuer war es?"><br><br>
 
-<button type="submit">Senden</button>
+<button type="submit">Daten übermitteln</button>
 </form>
 
 {% include "footer.html" %}

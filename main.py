@@ -1,7 +1,9 @@
 from flask import Flask
 from flask import render_template
 from flask import request
-import daten
+import json
+from json import loads, dumps
+from daten import *
 
 app = Flask("Projektarbeit")
 
@@ -26,24 +28,20 @@ def formular():
         #rueckgabe_string = "Hello " + ziel_person + "!"
         #return rueckgabe_string
 
-        #liste erstellen
-        aktivitaet = request.form['name']
-        zeitpunkt, aktivitaet = daten.aktivitaet_speichern(aktivitaet)
+        #eingabe = request.form["name"]
+        #speichern = daten.eingabe_speichern(eingabe)
+        data = request.form
+        vorname = data["name"]
+        gekauft = data["was"]
+        ausgegeben = data["betrag"]
+        my_dict = {"Vorname": vorname, "Was": gekauft, "Ausgegeben": ausgegeben}
+        
+
+        with open("eingaben_nutzer.json", "w") as open_file:
+            json.dump(my_dict, open_file)
         return render_template("formular.html")
     else:
         return render_template("formular.html")
-
-
-@app.route("/formular/", methods=['GET', 'POST'])
-def aktivitaet_speichern():
-    if request.method == 'POST':
-        # aktivitaet = request.form['aktivitaet']
-        # zeitpunkt, aktivitaet = daten.aktivitaet_speichern(aktivitaet)
-        rueckgabe_string = "Gespeichert: " + aktivitaet + " um " + str(zeitpunkt)
-        return rueckgabe_string
-
-    return render_template("formular.html")
-
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)

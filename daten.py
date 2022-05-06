@@ -1,5 +1,6 @@
 from datetime import datetime
 import json
+from json import loads, dumps
 
 
 def speichern(datei, key, value):
@@ -17,14 +18,14 @@ def speichern(datei, key, value):
         json.dump(datei_inhalt, open_file)
 
 
-def aktivitaet_speichern(aktivitaet):
+def eingabe_speichern(eingabe):
     datei_name = "eingaben_nutzer.json"
     zeitpunkt = datetime.now()
-    speichern(datei_name, zeitpunkt, aktivitaet)
-    return zeitpunkt, aktivitaet
+    speichern(datei_name, zeitpunkt, eingabe)
+    return zeitpunkt, eingabe
 
 
-def aktivitaeten_laden():
+"""def eingabe_laden():
     datei_name = "eingaben_nutzer.json"
 
     try:
@@ -34,3 +35,4 @@ def aktivitaeten_laden():
         datei_inhalt = {}
 
     return datei_inhalt
+"""

@@ -3,7 +3,7 @@ from flask import render_template
 from flask import request
 import json
 from json import loads, dumps
-from daten import *
+from daten import daten_laden
 from datetime import datetime
 
 app = Flask("Projektarbeit")
@@ -31,12 +31,15 @@ def formular():
         ausgegeben = data["betrag"]
         zeitpunkt = datetime.now()
 
-        my_dict = dict()
-        my_dict[str(zeitpunkt)] = {"Vorname": vorname, "Was": gekauft, "Ausgegeben": ausgegeben, "Zeitpunkt": zeitpunkt}
+
+        daten = daten_laden()
+
+        my_dict = {"Vorname": vorname, "Was": gekauft, "Ausgegeben": ausgegeben}
+        daten.update({str(zeitpunkt): my_dict})
 
 
         with open("eingaben_nutzer.json", "w") as open_file:
-            json.dump(my_dict, open_file, default=str)
+            json.dump(daten, open_file, default=str)
         return render_template("formular.html")
     else:
         return render_template("formular.html")

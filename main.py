@@ -4,6 +4,7 @@ from flask import request
 import json
 from json import loads, dumps
 from daten import *
+from datetime import datetime
 
 app = Flask("Projektarbeit")
 
@@ -24,21 +25,18 @@ def start():
 @app.route("/formular/", methods=['GET', 'POST'])
 def formular():
     if request.method == 'POST':
-        #ziel_person = request.form['vorname']
-        #rueckgabe_string = "Hello " + ziel_person + "!"
-        #return rueckgabe_string
-
-        #eingabe = request.form["name"]
-        #speichern = daten.eingabe_speichern(eingabe)
         data = request.form
         vorname = data["name"]
         gekauft = data["was"]
         ausgegeben = data["betrag"]
-        my_dict = {"Vorname": vorname, "Was": gekauft, "Ausgegeben": ausgegeben}
-        
+        zeitpunkt = datetime.now()
+
+        my_dict = dict()
+        my_dict[str(zeitpunkt)] = {"Vorname": vorname, "Was": gekauft, "Ausgegeben": ausgegeben, "Zeitpunkt": zeitpunkt}
+
 
         with open("eingaben_nutzer.json", "w") as open_file:
-            json.dump(my_dict, open_file)
+            json.dump(my_dict, open_file, default=str)
         return render_template("formular.html")
     else:
         return render_template("formular.html")

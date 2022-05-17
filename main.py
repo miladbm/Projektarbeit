@@ -5,6 +5,7 @@ import json
 from json import loads, dumps
 from daten import daten_laden
 from datetime import datetime
+from json import loads, dumps
 
 app = Flask("Projektarbeit")
 
@@ -43,6 +44,14 @@ def formular():
         return render_template("formular.html")
     else:
         return render_template("formular.html")
+
+@app.route("/ausgaben/")
+def ausgaben():
+    with open("eingaben_nutzer.json") as open_file:
+        json_as_string = open_file.read()
+        my_read_dict = loads(json_as_string)
+
+        return render_template(my_read_dict)
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)

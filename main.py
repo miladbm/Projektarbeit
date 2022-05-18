@@ -50,8 +50,7 @@ def ausgaben():
     with open("eingaben_nutzer.json") as open_file:
         json_as_string = open_file.read()
         my_read_dict = loads(json_as_string)
-
-        return render_template(my_read_dict)
+        return render_template("ausgaben.html")
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)

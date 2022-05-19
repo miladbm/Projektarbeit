@@ -1,4 +1,31 @@
 {% include "header.html" %}
 
+<p>{{eingabe_nutzer}}</p>
+
+{% if eingabe_nutzer %}
+    <table>
+          <thead style="text-align:left">
+            <tr>
+                <th>Name</th>
+                <th>Was</th>
+                <th>Betrag</th>
+
+            </tr>
+          </thead>
+        <tbody>
+        {% for key, value in eingabe_nutzer.items() %}
+        <tr>
+
+        <td>{{value["Name"]}}</td>
+        <td>{{value["Was"]}}</td>
+        <td>{{value["Betrag"]}}</td>
+
+        </tr>
+        {% endfor %}
+        </tbody>
+        </table>
+    {% else %}
+    <p> Keine Einträge vorhanden.</p>
+    {% endif %}
 
 {% include "footer.html" %}

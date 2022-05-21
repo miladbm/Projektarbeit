@@ -1,31 +1,38 @@
 {% include "header.html" %}
 
-<p>{{eingabe_nutzer}}</p>
+    <div class="container">
+        <br>
+        <h1>Übersicht aller Ausgaben</h1>
+        {% if eingabe_nutzer %}
+            <table>
+                <thead style="text-align:left">
+                    <tr>
+                        <th>Name</th>
+                        <th>Was</th>
+                        <th>Betrag</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for key, value in eingabe_nutzer.items() %}
+                    <tr>
+                        <td>{{value["Name"]}}</td>
+                        <td>{{value["Was"]}}</td>
+                        <td>{{value["Betrag"]}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p> Keine Einträge vorhanden.</p>
+        {% endif %}
 
-{% if eingabe_nutzer %}
-    <table>
-          <thead style="text-align:left">
-            <tr>
-                <th>Name</th>
-                <th>Was</th>
-                <th>Betrag</th>
+        <br>
 
-            </tr>
-          </thead>
-        <tbody>
-        {% for key, value in eingabe_nutzer.items() %}
-        <tr>
+        <button class="btn btn-secondary btn-lg btn-block"><a href="/delete/" style="text-decoration: none; ">Alle Daten löschen</a></button>
+    </div>
 
-        <td>{{value["Name"]}}</td>
-        <td>{{value["Was"]}}</td>
-        <td>{{value["Betrag"]}}</td>
 
-        </tr>
-        {% endfor %}
-        </tbody>
-        </table>
-    {% else %}
-    <p> Keine Einträge vorhanden.</p>
-    {% endif %}
+
+
 
 {% include "footer.html" %}

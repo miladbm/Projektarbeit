@@ -1,12 +1,37 @@
 {% include "header.html" %}
 
-<h1>Bitte trage hier deine Ausgaben ein:</h1>
-<form method="POST">
-<p>Name: </p><input type="text" name="name" placeholder="Gib hier Luca, Mirjam oder Sarina ein"><br><br>
-<p>Was: </p><input type="text" name="was" placeholder="Was wurde gekauft?"><br><br>
-<p>Betrag:</p><input type="text" name="betrag" placeholder="Wie teuer war es?"><br><br>
+    <div class="container">
+        <br>
+        <h1>Bitte trage hier deine Ausgaben ein:</h1>
 
-<button type="submit">Daten übermitteln</button>
-</form>
+        <form method="POST">
+        <select class="form-select" aria-label="Default select example" name="name">
+            <option selected>Wähle deinen Namen</option>
+            <option value="Luca">Luca</option>
+            <option value="Mirjam">Mirjam</option>
+            <option value="Sarina">Sarina</option>
+        </select>
+
+        <br>
+
+        <form>
+            <div class="form-group">
+                <label for="was">Was wurde gekauft?</label>
+                <input type="text" class="form-control" id="was" placeholder="Gib hier ein, was du gekauft hast." name="was">
+            </div>
+
+            <br>
+
+            <div class="form-group">
+                <label for="betrag">Wie viel hat deine Ausgabe gekostet?</label>
+                <input type="text" class="form-control" id="betrag" placeholder="Gib hier den Betrag ein." name="betrag">
+            </div>
+
+            <br>
+
+            <button type="submit" class="btn btn-secondary btn-lg btn-block">Daten übermitteln</button>
+
+        </form>
+    </div>
 
 {% include "footer.html" %}

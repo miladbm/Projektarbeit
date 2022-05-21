@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="{{url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
-<title>Willkommen</title>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!--Sorgt für responsive Design-->
+    <link rel="stylesheet" href="{{url_for('static', filename='bootstrap/css/bootstrap.min.css') }}"> <!--Verlinkung zu Bootstrap CSS-->
+    <title>WG-Rechner</title>
 </head>
 
 <body>
-
+    <!--Start Menüleiste oben-->
     <header class="p-3 bg-dark text-white">
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-        </a>
-
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="/" class="nav-link px-2 text-white">Home</a></li>
-          <li><a href="/formular/" class="nav-link px-2 text-white">Ausgaben erfassen</a></li>
-          <li><a href="/ausgaben" class="nav-link px-2 text-white">Übersicht Ausgaben</a></li>
-          <li><a href="/berechnung/" class="nav-link px-2 text-white">Geldrechner</a></li>
-        </ul>
-
-      </div>
-    </div>
-  </header>
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+                </a>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="/" class="nav-link px-2 text-white">Home</a></li>
+                    <li><a href="/formular/" class="nav-link px-2 text-white">Ausgaben erfassen</a></li>
+                    <li><a href="/ausgaben" class="nav-link px-2 text-white">Übersicht Ausgaben</a></li>
+                    <li><a href="/berechnung/" class="nav-link px-2 text-white">Geldrechner</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!--Ende Menüleiste oben-->

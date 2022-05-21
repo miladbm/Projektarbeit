@@ -2,10 +2,12 @@ from flask import Flask
 from flask import render_template
 from flask import request
 import json
-from json import loads, dumps
 from daten import daten_laden
 from datetime import datetime
 from json import loads, dumps
+import os
+import os.path
+from os.path import exists
 
 app = Flask("Projektarbeit")
 
@@ -51,8 +53,16 @@ def ausgaben():
         json_as_string = open_file.read()
         my_read_dict = loads(json_as_string)
 
-        return render_template("ausgaben.html", eingabe_nutzer=my_read_dict)
+    return render_template("ausgaben.html", eingabe_nutzer=my_read_dict)
 
+@app.route("/delete/")
+def delete():
+    with open("eingaben_nutzer.json", "w") as open_file:
+        json.dump({})
+    """with open("eingaben_nutzer.json", "w") as open_file:
+        dict_leer=open_file.clear()
+    return render_template("ausgaben.html", dict_leer=dict_leer)
+"""
 @app.route("/berechnung/")
 def berechnung():
     with open("eingaben_nutzer.json") as open_file:

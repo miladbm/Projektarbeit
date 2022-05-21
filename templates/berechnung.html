@@ -1,8 +1,25 @@
 {% include "header.html" %}
 
-<p>{{summe_mirjam}}</p>
-<p>{{summe_sarina}}</p>
-<p>{{summe_luca}}</p>
+    <div class="container">
+        <br>
+        <h1>Übersicht alle Ausgaben pro Person</h1>
+    </div>
 
+    <!--Start Tabelle Übersicht Ausgaben -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"><p>Ausgaben Mirjam: </p></div>
+            <div class="col-md-2"><p><strong>CHF {{summe_mirjam}}</strong></p></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"><p>Ausgaben Sarina: </p></div>
+            <div class="col-md-2"><p><strong>CHF {{summe_sarina}}</strong></p></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"><p>Ausgaben Luca: </p></div>
+            <div class="col-md-2"><p><strong>CHF {{summe_luca}}</strong></p></div>
+        </div>
+    </div>
+    <!--Ende Tabelle Übersicht Ausgaben-->
 
 {% include "footer.html" %}

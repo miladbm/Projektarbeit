@@ -1,61 +1,37 @@
 {% include "header.html" %}
-
-    <div class="container">
-        <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+        <div class="container">
         <br>
         <h1>Übersicht aller Ausgaben</h1>
+
         {% if eingabe_nutzer %}
-            <table>
-                <thead style="text-align:left">
+
+
+            <table class="table">
+                <thead>
                     <tr>
                         <th>Name</th>
                         <th>Was</th>
+                        <th>Kategorie</th>
                         <th>Betrag</th>
                     </tr>
-                </thead>
                 <tbody>
                     {% for key, value in eingabe_nutzer.items() %}
+
                     <tr>
                         <td>{{value["Name"]}}</td>
                         <td>{{value["Was"]}}</td>
+                        <td>{{value["Kategorie"]}}</td>
                         <td>{{value["Betrag"]}}</td>
                     </tr>
                     {% endfor %}
-                </tbody>
-            </table>
+                    <tr>
+
+  </tbody>
+</table>
         {% else %}
             <p> Keine Einträge vorhanden.</p>
         {% endif %}
-
+        <br>
         <td><a href="daten_loeschen" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Alle Daten löschen</a></td>
         <br>
     </div>

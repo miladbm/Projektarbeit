@@ -27,12 +27,13 @@ def formular():
         data = request.form
         name = data["name"]
         was = data["was"]
+        kategorie = data["kategorie"]
         betrag = data["betrag"]
         zeitpunkt = datetime.now()
 
         daten = daten_laden()
 
-        my_dict = {"Name": name, "Was": was, "Betrag": betrag}
+        my_dict = {"Name": name, "Was": was, "Kategorie": kategorie, "Betrag": betrag}
         daten.update({str(zeitpunkt): my_dict})
 
         with open("eingaben_nutzer.json", "w") as open_file:
@@ -94,7 +95,11 @@ def berechnung():
                 except:
                     continue
 
-        fig = px.bar(x=["Luca", "Mirjam", "Sarina"], y=[summe_luca, summe_mirjam, summe_sarina])
+        fig = px.bar(
+            x=["Luca", "Mirjam", "Sarina"],
+            y=[summe_luca, summe_mirjam, summe_sarina],
+            labels={"x": "Name", "y": "Betrag"}
+        )
         div = plot(fig, output_type="div")
 
         return render_template("berechnung.html", summe_mirjam=summe_mirjam, summe_luca=summe_luca, summe_sarina=summe_sarina, fig_div=div)

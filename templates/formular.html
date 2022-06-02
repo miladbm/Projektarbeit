@@ -5,6 +5,8 @@
         <h1>Bitte trage hier deine Ausgaben ein:</h1>
 
         <form method="POST">
+            <label for="name">Wer hat den Einkauf gemacht?</label>
+
         <select class="form-select" aria-label="Default select example" name="name">
             <option selected>Wähle deinen Namen</option>
             <option value="Luca">Luca</option>
@@ -14,12 +16,22 @@
 
         <br>
 
-        <form>
+
             <div class="form-group">
                 <label for="was">Was wurde gekauft?</label>
                 <input type="text" class="form-control" id="was" placeholder="Gib hier ein, was du gekauft hast." name="was">
             </div>
 
+            <br>
+            <label for="kategorie">Zu welcher Kategorie gehört das Gekaufte?</label>
+            <select class="form-select" aria-label="Default select example" name="kategorie">
+            <option selected>Wähle die Kategorie</option>
+            <option value="Lebensmittel und Getränke">Lebensmittel und Getränke</option>
+            <option value="Haushalt">Haushalt</option>
+            <option value="Hygieneartikel">Hygieneartikel</option>
+            <option value="Balkon">Balkon</option>
+            <option value="Diverses">Diverses</option>
+            </select>
             <br>
 
             <div class="form-group">

@@ -75,7 +75,7 @@ def berechnung():
         summe_sarina = 0
 
         for key, value in my_read_dict.items():
-            if value['Name'] == 'Mirjam':
+            if value["Name"] == 'Mirjam':
                 try:
                     summe_mirjam += float(value['Betrag'])
 
@@ -96,7 +96,6 @@ def berechnung():
 
         fig = px.bar(x=["Luca", "Mirjam", "Sarina"], y=[summe_luca, summe_mirjam, summe_sarina])
         div = plot(fig, output_type="div")
-        fig.show()
 
         return render_template("berechnung.html", summe_mirjam=summe_mirjam, summe_luca=summe_luca, summe_sarina=summe_sarina, fig_div=div)
     else:

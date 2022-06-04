@@ -78,31 +78,83 @@ def berechnung():
         for key, value in my_read_dict.items():
             if value["Name"] == 'Mirjam':
                 try:
-                    summe_mirjam += float(value['Betrag'])
+                    summe_mirjam += float(value["Betrag"])
 
                 except:
                     continue
 
-            elif value['Name'] == 'Luca':
+            elif value["Name"] == 'Luca':
                 try:
-                    summe_luca += float(value['Betrag'])
+                    summe_luca += float(value["Betrag"])
                 except:
                     continue
 
-            elif value['Name'] == 'Sarina':
+            elif value["Name"] == "Sarina":
                 try:
-                    summe_sarina += float(value['Betrag'])
+                    summe_sarina += float(value["Betrag"])
                 except:
                     continue
 
-        fig = px.bar(
+        summe_lebensmittel = 0
+        summe_haushalt = 0
+        summe_hygieneartikel = 0
+        summe_balkon = 0
+        summe_diverses = 0
+
+        for key, value in my_read_dict.items():
+            if value["Kategorie"] == "Lebensmittel":
+                try:
+                    summe_lebensmittel += float(value["Betrag"])
+                except:
+                    continue
+
+            elif value["Kategorie"] == "Haushalt":
+                try:
+                    summe_haushalt += float(value["Betrag"])
+                except:
+                    continue
+
+            elif value["Kategorie"] == "Hygieneartikel":
+                try:
+                    summe_hygieneartikel += float(value["Betrag"])
+                except:
+                    continue
+
+            elif value["Kategorie"] == "Balkon":
+                try:
+                    summe_balkon += float(value["Betrag"])
+                except:
+                    continue
+
+            elif value["Kategorie"] == "Diverses":
+                try:
+                    summe_diverses += float(value["Betrag"])
+                except:
+                    continue
+
+        balkendiagramm = px.bar(
             x=["Luca", "Mirjam", "Sarina"],
             y=[summe_luca, summe_mirjam, summe_sarina],
             labels={"x": "Name", "y": "Betrag"}
         )
-        div = plot(fig, output_type="div")
+        div_balkendiagramm = plot(balkendiagramm, output_type="div")
 
-        return render_template("berechnung.html", summe_mirjam=summe_mirjam, summe_luca=summe_luca, summe_sarina=summe_sarina, fig_div=div)
+        liste_kategorien = [summe_lebensmittel, summe_haushalt, summe_hygieneartikel, summe_balkon, summe_diverses]
+        liste_namen = ["Lebensmittel", "Haushalt", "Hygieneartikel", "Balkon", "Diverses"]
+
+        kreisdiagramm = px.pie(values=liste_kategorien, names=liste_namen)
+
+        div_kreisdiagramm = plot(kreisdiagramm, output_type="div")
+
+        return render_template("berechnung.html",
+                               summe_mirjam=summe_mirjam, summe_luca=summe_luca, summe_sarina=summe_sarina,
+                               summe_lebensmittel=summe_lebensmittel,
+                               summe_haushalt=summe_haushalt,
+                               summe_hygieneartikel=summe_hygieneartikel,
+                               summe_balkon=summe_balkon,
+                               summe_diverses=summe_diverses,
+                               balkendiagramm=div_balkendiagramm,
+                               kreisdiagramm=div_kreisdiagramm)
     else:
         return render_template("daten_loeschen.html")
 

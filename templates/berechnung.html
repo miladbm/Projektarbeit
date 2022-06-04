@@ -8,24 +8,24 @@
     <!--Start Tabelle Übersicht Ausgaben -->
     <div class="container">
         <div class="row">
-            <div class="col-md-2"><p>Ausgaben Mirjam: </p></div>
-            <div class="col-md-2"><p><strong>CHF {{summe_mirjam}}</strong></p></div>
-        </div>
-        <div class="row">
-            <div class="col-md-2"><p>Ausgaben Sarina: </p></div>
-            <div class="col-md-2"><p><strong>CHF {{summe_sarina}}</strong></p></div>
-        </div>
-        <div class="row">
-            <div class="col-md-2"><p>Ausgaben Luca: </p></div>
-            <div class="col-md-2"><p><strong>CHF {{summe_luca}}</strong></p></div>
+            <div class="col-md-4"><p>Ausgaben Mirjam: <p><strong>CHF {{summe_mirjam}}</strong></p></div>
+            <div class="col-md-4"><p>Ausgaben Luca: <p><strong>CHF {{summe_luca}}</strong></p></div>
+            <div class="col-md-4"><p>Ausgaben Sarina: <p><strong>CHF {{summe_sarina}}</strong></p></div>
         </div>
     </div>
     <!--Ende Tabelle Übersicht Ausgaben-->
     <div class="container">
         <br>
-        <h1>Diagramm</h1>
 
-        {{ fig_div|safe }}
+        {{ balkendiagramm|safe }}
 
     </div>
+
+    <div class ="container">
+        <h1>Übersicht alle Kategorien</h1>
+        <p>Hier siehst du eine Übersicht mit allen Kategorien und den Ausgaben pro Kategorie in %.</p>
+
+        {{ kreisdiagramm|safe }}
+    </div>
+
 {% include "footer.html" %}

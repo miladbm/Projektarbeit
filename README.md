@@ -16,5 +16,6 @@ In der Navigation oben können "Ausgaben erfassen" neue Ausgaben eingetragen wer
 
 
 ##Ungelöste/unbearbeitete Probleme
- - Was wurde nicht gelöst
- - Welche Verbesserungen könnten noch gemacht werden.
+Es wurde versucht, die Berechnungen und die Diagramme aus dem Main auszulagern,dies hat zu Anzeigefehlern im HTML geführt. Daher wurden diese wieder zurück ins Main File genommen. Die Datei berechnungen.py wurde mal bestehen gelassen, obwohl diese somit nicht verwendet wird. Die Auslagerung der Berechnung könnte zu einem späteren Zeitpunkt nochmals probiert werden. 
+
+Weiter könnten noch weitere Diagramme zu den Kategorien gemacht und dargestellt werden. 

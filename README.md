@@ -3,7 +3,7 @@
 
 
 ## Problembeschreibung/Motivation
-Da ich in einer WG wohne und wir viele gemeinsame Ausgaben haben, möchten wir gerne eine Übersicht aller Ausgaben generieren. Daher erstelle ich in diesem Projekt eine Seite, auf der Ausgaben eingetragen werden könnnen, eine Übersichtsseite mit allen Ausgaben, sowie eine Seite mit den Ausgaben pro Person und den Ausgaben nach Kategorie.
+Da ich in einer WG wohne und wir viele gemeinsame Ausgaben haben, möchten wir gerne eine Übersicht aller Ausgaben generieren. Daher erstelle ich in diesem Projekt eine Seite, auf der Ausgaben eingetragen werden könnnen, eine Übersichtsseite mit allen Ausgaben, sowie eine Seite mit den Ausgaben pro Person und den Ausgaben nach Kategorie ersichtlich sind.
 
 ## Betrieb
 Für den Betrieb werden die zusätzlichen Pakete Plotly und Flask benötigt. 

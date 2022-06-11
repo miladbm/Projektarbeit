@@ -1,43 +1,41 @@
 {% include "header.html" %}
-        <div class="container">
-        <br>
+    <div class="container">
+    <br>
         <h1>Übersicht aller Ausgaben</h1>
 
         {% if eingabe_nutzer %}
 
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Was</th>
+                    <th>Kategorie</th>
+                    <th>Betrag</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for key, value in eingabe_nutzer.items() %}
 
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Was</th>
-                        <th>Kategorie</th>
-                        <th>Betrag</th>
-                    </tr>
-                <tbody>
-                    {% for key, value in eingabe_nutzer.items() %}
+                <tr>
+                    <td>{{value["Name"]}}</td>
+                    <td>{{value["Was"]}}</td>
+                    <td>{{value["Kategorie"]}}</td>
+                    <td>{{value["Betrag"]}}</td>
+                </tr>
 
-                    <tr>
-                        <td>{{value["Name"]}}</td>
-                        <td>{{value["Was"]}}</td>
-                        <td>{{value["Kategorie"]}}</td>
-                        <td>{{value["Betrag"]}}</td>
-                    </tr>
-                    {% endfor %}
-                    <tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
-  </tbody>
-</table>
         {% else %}
-            <p> Keine Einträge vorhanden.</p>
+
+        <p> Keine Einträge vorhanden.</p>
+
         {% endif %}
         <br>
         <td><a href="daten_loeschen" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Alle Daten löschen</a></td>
         <br>
     </div>
-
-
-
-
 
 {% include "footer.html" %}

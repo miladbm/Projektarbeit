@@ -20,7 +20,7 @@ def start():
     return render_template("index.html")
 
 
-# Verlinkung auf Formular
+# Verlinkung auf Ausgaben erfassen
 @app.route("/formular/", methods=['GET', 'POST'])
 def formular():
     if request.method == 'POST':
@@ -43,6 +43,7 @@ def formular():
         return render_template("formular.html")
 
 
+# Verlinkung auf Übersicht Ausgaben
 @app.route("/ausgaben/")
 def ausgaben():
     if exists("eingaben_nutzer.json"):
@@ -55,6 +56,7 @@ def ausgaben():
         return render_template("daten_loeschen.html")
 
 
+# Verlinkung auf Seite die kommt, wenn Daten gelöscht wurden.
 @app.route("/ausgaben/daten_loeschen")
 def daten_loeschen():
     if exists("eingaben_nutzer.json"):
@@ -64,6 +66,7 @@ def daten_loeschen():
         return render_template("daten_loeschen.html")
 
 
+# Berechnungen für Seite "Zusammenfassung"
 @app.route("/berechnung/")
 def berechnung():
     if exists("eingaben_nutzer.json"):

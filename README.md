@@ -1,28 +1,20 @@
-# README - Dokumentation Einkaufsliste
+# README - Dokumentation WG-Ausgabenübersicht
 ##  Mirjam Lang
-### Idee
-- Einkaufsliste WG
-- Evtl. mit Budgetplan
 
-# Möglicher Aufbau Readme
-Problembeschreibung/Motivation
- - Warum dieses Projekt
- - Welches Problem löst das Projekt
- - Was macht das Projekt
-Lückenfüller wie: "Dieses Projekt wurde im Rahmen des Programmieren2 Modules an der FHGR gemacht" oder ähnlich sind unnötig. Auch sollten keine Klarnamen, oder Orte genannt werden.
 
-Betrieb
- - Welche zusätzliche Pakete müssen bei Bedarf installiert werden. (Muss im Normalfall nicht beachtet werden. Python muss nicht erwähnt werden, da das bei einem Python Projekt impliziert ist.)
- - Was muss man bei der Ausführung beachten. Was muss eventuell davor noch gemacht werden.
- - Welch Datei muss ausgeführt werden
+##Problembeschreibung/Motivation
+Da ich in einer WG wohne und wir viele gemeinsame Ausgaben haben, möchten wir gerne eine Übersicht aller Ausgaben generieren. Daher erstelle ich in diesem Projekt eine Seite, auf der Ausgaben eingetragen werden könnnen, eine Übersichtsseite mit allen Ausgaben, sowie eine Seite mit den Ausgaben pro Person und den Ausgaben nach Kategorie.
 
-Benutzung
-- Wie wird das Projekt benutzt
-- Welche Optionen oder auch Spezialitäten existieren
+##Betrieb
+Für den Betrieb werden die zusätzlichen Pakete Plotly und Flask benötigt. 
 
-Architektur
-- Hier bei Bedarf eine kurze Beschreibung des Ablaufs des Programms auf Code Ebene z.B. als Ablaufdiagramm.
+Die Datei Main muss zuerst ausgeführt werden. 
 
-Ungelöste/unbearbeitete Probleme
+
+##Benutzung
+In der Navigation oben können "Ausgaben erfassen" neue Ausgaben eingetragen werden. Bei "Übersicht Ausgaben" ist eine Liste von allen Ausgaben ersichtlich. Auf dieser Seite können zuunterst alle Daten zurückgesetzt werden. Mit diesem Button wird das JSON File, wo die Ausgaben gespeichert sind, gelöscht. Unter "Zusammenfassung" sind die Ausgaben pro Person sowie verschiedene Diagramme mit spannenden Ergänzungen ersichtlich.  
+
+
+##Ungelöste/unbearbeitete Probleme
  - Was wurde nicht gelöst
  - Welche Verbesserungen könnten noch gemacht werden.
